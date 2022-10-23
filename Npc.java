@@ -1,11 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class Npc extends Personagem {
-    private int opc;
     private int ataque;
-    private int dano;
     private int i;
+    private String nome;
 
     public Npc(String nome, int forca, int vida) {
         super(nome, forca, vida);
@@ -20,25 +21,25 @@ public class Npc extends Personagem {
 
     public int ataqueNpc() {
         Random aleatorio = new Random();
-        ataque = aleatorio.nextInt(3);
-        return ataque;
+        ataque = aleatorio.nextInt(2);
+        return ataque+1;
     }
 
-
-    public void tipoAtaque() {
+    @Override
+    public void atacar(Personagem alvo) {
         if (this.verificaHp()) {
             switch (ataqueNpc()) {
                 case 1:
                     System.out.println("Usuario aplicou um soco.");
-                    dano = getForca()+ 7 + (int) (i / 10);
+                    alvo.recebeDano(getForca()+ 7 + (int) (i / 10));
                     break;
                 case 2:
                     System.out.println("Usuario aplicou um chute.");
-                    dano = getForca()+ 10 + (int) (i / 10);
+                    alvo.recebeDano(getForca()+ 10 + (int) (i / 10));
                     break;
                 case 3:
                     System.out.println("Usuario aplicou uma cabecada(lá ele...).");
-                    dano = getForca()+ 15 + (int) (i / 10);
+                    alvo.recebeDano(getForca()+ 15 + (int) (i / 10));
                     break;
                 default:
                     System.out.println("Opcao invalida");

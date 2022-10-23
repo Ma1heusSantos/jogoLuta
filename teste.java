@@ -39,21 +39,8 @@ public class teste {
       while (paladino.verificaHp() && npc.verificaHp()) {
         paladino.imprimeHp();
         npc.imprimeHp();
-        escolhaAtaque = ataqueUsuario();
-        //passar para a classe paladino;
-        switch (escolhaAtaque) {
-          case 1:
-            System.out.println("Usuario aplicou um soco.");
-            npc.setVida(npc.getVida() - 7);
-            break;
-          case 2:
-            System.out.println("Usuario aplicou um ataque especial.");
-            npc.setVida(npc.getVida() - 20);
-            break;
-          default:
-            System.out.println("Opcao invalida");
-            break;
-        }
+        paladino.atacar(npc);
+        //passar para a classe paladino
         if (npc.verificaHp()) {
           escolhaAtaque = ataqueComputador();
           //passar para a classe NPC
@@ -79,6 +66,7 @@ public class teste {
         paladino.recebeCura(5);
       }
       i++;
+      
     }
     return i;
   }

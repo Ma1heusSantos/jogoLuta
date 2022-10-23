@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Guerreiro extends Personagem {
     private int opc;
     private int dano;
@@ -8,6 +9,7 @@ public class Guerreiro extends Personagem {
 
     }
 
+    @Override
     public int ataqueUsuario() {
         Scanner dado = new Scanner(System.in);
         System.out.println("Qual Habilidade você deseja usar?");
@@ -18,19 +20,20 @@ public class Guerreiro extends Personagem {
         return opc;
     }
 
-    public void tipoAtaque() {
+    @Override
+    public void atacar(Personagem alvo) {
         if (this.verificaHp()) {
             switch (ataqueUsuario()) {
                 case 1:
                     System.out.println("O Jogador aplicou um soco.");
-                    dano = getForca()+ 10;
+                    alvo.recebeDano(getForca() + 10);
                     break;
                 case 2:
                     System.out.println("O jogador realizou uma esquiva perfeita.");
                     break;
                 case 3:
                     System.out.println("O Jogador aplicou o Ragnarok");
-                    dano = (getForca() + 5);
+                    alvo.recebeDano(getForca() + 5);
                     recebeCura(5);
                     break;
             }

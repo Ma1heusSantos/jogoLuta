@@ -1,39 +1,30 @@
 public class Batalha {
-    private Paladino jogador;
-    private Npc monstro;
+    private Personagem jogador;
+    private Personagem monstro;
     private int i;
 
-    public Batalha(Paladino jogador, Npc mostro) {
-        jogador = new Paladino("Teu", 10, 1000);
-        monstro = new Npc("Serpente Serpentina", 20, 20);
+    public Batalha(Personagem jogador, Personagem monstro) {
+        this.jogador = jogador;
+        this.monstro = monstro;
     }
 
-    public int combate(){
-        while (monstro.verificaHp()) {
-            monstro.setVida(10 + i);
+    public int combate() {
 
-            System.out.println("====================");
-            System.out.println("ROUND" + i);
-            System.out.println("====================\n");
-
-            while (jogador.verificaHp() && monstro.verificaHp()) {
-                jogador.imprimeHp();
-                monstro.imprimeHp();
-                jogador.ataqueUsuario();
-                jogador.tipoAtaque();
-                monstro.ataqueNpc();
-                monstro.tipoAtaque();
-            }
-            if (jogador.verificaHp()) {
-                jogador.recebeCura(5);
-            }
-            i++;
+        while (jogador.verificaHp() && monstro.verificaHp()) {
+            jogador.imprimeHp();
+            monstro.imprimeHp();
+            jogador.atacar(monstro);
+            monstro.atacar(jogador);
         }
-        return i;
+        if (jogador.verificaHp()) {
+            jogador.recebeCura(5);
+        }
+        i++;
+        if (jogador.verificaHp() == true) {
+            return 1;
+        } else {
+            return 0;
+        }
 
     }
 }
-
-
-
-
