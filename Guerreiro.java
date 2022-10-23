@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class Guerreiro extends Personagem {
     private int opc;
-    private int i;
     private int dano;
 
     public Guerreiro(String nome, int forca, int vida) {
