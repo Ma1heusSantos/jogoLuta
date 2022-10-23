@@ -24,29 +24,20 @@ public class Npc extends Personagem {
         return ataque;
     }
 
-    public int tipoAtaqueNpc() {
-        Scanner dado = new Scanner(System.in);
-        System.out.println("Qual Habilidade você deseja usar?");
-        System.out.println("[1] - soco");
-        System.out.println("[2] - chute");
-        System.out.println("[3] - cabecada(lá ele...)");
-        opc = dado.nextInt();
-        return opc;
-    }
 
     public void tipoAtaque() {
         if (this.verificaHp()) {
-            switch (tipoAtaqueNpc()) {
+            switch (ataqueNpc()) {
                 case 1:
                     System.out.println("Usuario aplicou um soco.");
                     dano = getForca()+ 7 + (int) (i / 10);
                     break;
                 case 2:
-                    System.out.println("Usuario aplicou um ataque especial.");
+                    System.out.println("Usuario aplicou um chute.");
                     dano = getForca()+ 10 + (int) (i / 10);
                     break;
                 case 3:
-                    System.out.println("Usuario aplicou um ataque especial.");
+                    System.out.println("Usuario aplicou uma cabecada(lá ele...).");
                     dano = getForca()+ 15 + (int) (i / 10);
                     break;
                 default:

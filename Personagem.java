@@ -1,4 +1,4 @@
-public class Personagem {
+public class Personagem  {
     private String nome;
     private int forca;
     private int vida;
@@ -10,6 +10,7 @@ public class Personagem {
         this.vida = vida;
         this.vidaMax = vida;
     }
+    
 
     public Boolean verificaHp() {
         if (this.vida > 0) {
