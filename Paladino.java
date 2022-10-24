@@ -2,9 +2,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Paladino extends Personagem {
-    private int opc;
-    private int i;
-    private int dano;
 
     public Paladino(String nome, int forca, int vida) {
         super(nome, forca, vida);
@@ -18,8 +15,8 @@ public class Paladino extends Personagem {
         System.out.println("[1] - soco");
         System.out.println("[2] - Realizar cura");
         System.out.println("[3] - Divine Smite");
-        opc = dado.nextInt();
-        return opc;
+        return dado.nextInt();
+        
     }
 
     @Override

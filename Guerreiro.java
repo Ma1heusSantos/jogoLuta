@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class Guerreiro extends Personagem {
-    private int opc;
-    private int dano;
+   
 
     public Guerreiro(String nome, int forca, int vida) {
         super(nome, forca, vida);
@@ -16,8 +15,7 @@ public class Guerreiro extends Personagem {
         System.out.println("[1] - soco");
         System.out.println("[2] - Esquiva Perfeita");
         System.out.println("[3] - Ragnarok");
-        opc = dado.nextInt();
-        return opc;
+        return dado.nextInt();
     }
 
     @Override

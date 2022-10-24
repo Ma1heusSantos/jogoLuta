@@ -13,15 +13,6 @@ public class Personagem {
         this.vidaMax = vida;
     }
 
-    public int escollheClasse() {
-        Scanner escolha = new Scanner(System.in);
-        System.out.println("Com qual Classe você deseja jogar?");
-        System.out.println("[1] - Paladino");
-        System.out.println("[2] - Guerreiro");
-        return escolha.nextInt();
-
-    }
-
     public int ataqueUsuario() {
         Scanner dado = new Scanner(System.in);
         System.out.println("Qual Habilidade você deseja usar?");

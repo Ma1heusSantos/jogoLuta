@@ -6,7 +6,7 @@ import javax.sound.sampled.SourceDataLine;
 public class Npc extends Personagem {
     private int ataque;
     private int i;
-    private String nome;
+    
 
     public Npc(String nome, int forca, int vida) {
         super(nome, forca, vida);
